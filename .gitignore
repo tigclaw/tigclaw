@@ -1,0 +1,19 @@
+# Internal docs (Docsify) — not for public repo
+docs/
+other/
+
+# Dependencies
+node_modules/
+.docsify_cache/
+
+# Build artifacts
+tigclaw.exe
+web/dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

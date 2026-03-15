@@ -3,7 +3,7 @@ import Layout from './components/Layout'
 import SEO from './components/SEO'
 import BlogPage from './pages/Blog'
 import DocsPage from './pages/Docs'
-import PricingPage from './pages/Pricing'
+
 import ChangelogPage from './pages/Changelog'
 import './App.css'
 
@@ -151,7 +151,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/docs" element={<DocsPage />} />
-        <Route path="/pricing" element={<PricingPage />} />
+
         <Route path="/changelog" element={<ChangelogPage />} />
       </Routes>
     </Layout>

@@ -4,7 +4,6 @@ import { useState } from 'react'
 const navLinks = [
   { label: 'Docs', href: '/docs' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Pricing', href: '/pricing' },
   { label: 'Changelog', href: '/changelog' },
 ]
 
@@ -100,7 +99,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <h4 className="text-white font-semibold text-sm mb-3">Product</h4>
               <div className="space-y-2">
                 <Link to="/docs" className="block text-sm text-zinc-500 hover:text-zinc-300 transition-colors">Documentation</Link>
-                <Link to="/pricing" className="block text-sm text-zinc-500 hover:text-zinc-300 transition-colors">Pricing</Link>
+
                 <Link to="/changelog" className="block text-sm text-zinc-500 hover:text-zinc-300 transition-colors">Changelog</Link>
               </div>
             </div>

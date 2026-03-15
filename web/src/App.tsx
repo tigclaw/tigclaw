@@ -1,36 +1,28 @@
+import { Routes, Route } from 'react-router-dom'
+import Layout from './components/Layout'
+import SEO from './components/SEO'
+import BlogPage from './pages/Blog'
+import DocsPage from './pages/Docs'
+import PricingPage from './pages/Pricing'
+import ChangelogPage from './pages/Changelog'
 import './App.css'
 
-function App() {
+function HomePage() {
   return (
-    <div className="min-h-screen">
+    <>
+      <SEO />
+
       {/* Hero Section */}
       <header className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-orange-500/5 via-transparent to-transparent" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-orange-500/10 rounded-full blur-[120px] -translate-y-1/2" />
-        
-        <nav className="relative z-10 max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-2xl">🐯</span>
-            <span className="text-xl font-bold text-white tracking-tight">Tigclaw</span>
-          </div>
-          <div className="flex items-center gap-4">
-            <a href="https://github.com/tigclaw/tigclaw" target="_blank" rel="noreferrer"
-               className="text-sm text-zinc-400 hover:text-white transition-colors">
-              GitHub
-            </a>
-            <a href="#install"
-               className="text-sm bg-orange-500 hover:bg-orange-400 text-black font-semibold px-4 py-2 rounded-lg transition-all hover:shadow-lg hover:shadow-orange-500/25">
-              Get Started
-            </a>
-          </div>
-        </nav>
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 pt-20 pb-32 text-center">
           <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-zinc-800 bg-zinc-900/50 text-sm text-zinc-400">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
             Open Source · 100% Local · Zero Cloud
           </div>
-          
+
           <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.1] tracking-tight mb-6">
             Your AI Gateway
             <br />
@@ -38,14 +30,14 @@ function App() {
               is Running Naked
             </span>
           </h1>
-          
+
           <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Tigclaw is the zero-trust security gateway for OpenClaw. 
-            It shields your API keys, rate-limits abuse, and blocks prompt injection attacks 
+            Tigclaw is the zero-trust security gateway for OpenClaw.
+            It shields your API keys, rate-limits abuse, and blocks prompt injection attacks
             — <span className="text-white font-medium">without sending a single byte to the cloud</span>.
           </p>
 
-          <div id="install" className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
             <div className="group relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-orange-500 to-amber-500 rounded-xl blur opacity-25 group-hover:opacity-50 transition-opacity" />
               <code className="relative block bg-zinc-900 border border-zinc-700 rounded-xl px-6 py-3 text-sm md:text-base text-orange-300 font-mono cursor-pointer hover:border-orange-500/50 transition-colors"
@@ -61,14 +53,9 @@ function App() {
       {/* Threat Section */}
       <section className="max-w-6xl mx-auto px-6 py-24">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Real Threats. Real Damage.
-          </h2>
-          <p className="text-zinc-400 max-w-xl mx-auto">
-            These aren't hypothetical risks — they've already happened to real users.
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Real Threats. Real Damage.</h2>
+          <p className="text-zinc-400 max-w-xl mx-auto">These aren't hypothetical risks — they've already happened to real users.</p>
         </div>
-
         <div className="grid md:grid-cols-2 gap-4">
           {[
             { icon: '💳', title: 'Credit Card Drained', desc: 'Port 3001 exposed to the internet. Bot scripts burned through $2,000 of OpenAI credits overnight.', severity: 'CRITICAL' },
@@ -82,9 +69,7 @@ function App() {
                 <div>
                   <div className="flex items-center gap-2 mb-2">
                     <h3 className="text-lg font-semibold text-white">{threat.title}</h3>
-                    <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
-                      threat.severity === 'CRITICAL' ? 'bg-red-500/20 text-red-400' : 'bg-orange-500/20 text-orange-400'
-                    }`}>{threat.severity}</span>
+                    <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${threat.severity === 'CRITICAL' ? 'bg-red-500/20 text-red-400' : 'bg-orange-500/20 text-orange-400'}`}>{threat.severity}</span>
                   </div>
                   <p className="text-zinc-400 text-sm leading-relaxed">{threat.desc}</p>
                 </div>
@@ -97,15 +82,9 @@ function App() {
       {/* Features Section */}
       <section className="max-w-6xl mx-auto px-6 py-24">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Four Layers of Defense
-          </h2>
-          <p className="text-zinc-400 max-w-xl mx-auto">
-            Tigclaw sits between the internet and your OpenClaw instance, 
-            filtering every request through military-grade protection.
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Four Layers of Defense</h2>
+          <p className="text-zinc-400 max-w-xl mx-auto">Tigclaw sits between the internet and your OpenClaw instance, filtering every request through military-grade protection.</p>
         </div>
-
         <div className="grid md:grid-cols-2 gap-6">
           {[
             { icon: '🔐', title: 'Zero-Trust Key Vault', desc: 'Real API keys never touch OpenClaw. Stored in AES-256-GCM encrypted vault with machine-bound keys. OpenClaw only sees disposable fake keys.', color: 'from-orange-500 to-amber-500' },
@@ -123,7 +102,7 @@ function App() {
         </div>
       </section>
 
-      {/* Architecture Diagram */}
+      {/* Architecture */}
       <section className="max-w-4xl mx-auto px-6 py-24">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">How It Works</h2>
@@ -152,27 +131,30 @@ function App() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA */}
       <section className="max-w-4xl mx-auto px-6 py-24 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Stop Running Naked.
-        </h2>
-        <p className="text-zinc-400 mb-8 max-w-lg mx-auto">
-          Your API keys deserve better than plaintext config files. 
-          Install Tigclaw in 30 seconds and sleep well tonight.
-        </p>
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Stop Running Naked.</h2>
+        <p className="text-zinc-400 mb-8 max-w-lg mx-auto">Your API keys deserve better than plaintext config files. Install Tigclaw in 30 seconds.</p>
         <a href="https://github.com/tigclaw/tigclaw" target="_blank" rel="noreferrer"
            className="inline-flex items-center gap-2 bg-white text-black font-bold px-8 py-4 rounded-xl text-lg hover:bg-zinc-200 transition-colors hover:shadow-lg hover:shadow-white/10">
           ⭐ Star on GitHub
         </a>
       </section>
+    </>
+  )
+}
 
-      {/* Footer */}
-      <footer className="border-t border-zinc-800 py-8 text-center text-sm text-zinc-500">
-        <p>🐯 Tigclaw — Zero-Trust AI Security Gateway</p>
-        <p className="mt-1">100% Open Source · 100% Local · Zero Cloud</p>
-      </footer>
-    </div>
+function App() {
+  return (
+    <Layout>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/docs" element={<DocsPage />} />
+        <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/changelog" element={<ChangelogPage />} />
+      </Routes>
+    </Layout>
   )
 }
 

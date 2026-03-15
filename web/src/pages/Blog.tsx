@@ -1,44 +1,6 @@
 import { Link } from 'react-router-dom'
 import SEO from '../components/SEO'
-
-const posts = [
-  {
-    slug: 'openclaw-vulnerability-scan',
-    title: 'Your OpenClaw Instance is Probably Hacked Right Now — Here\'s How to Check',
-    excerpt: 'We scanned thousands of self-hosted OpenClaw instances. 73% had exposed API keys in plaintext config files. Is yours one of them?',
-    date: '2026-03-15',
-    readTime: '8 min',
-    tag: 'Security',
-    tagColor: 'bg-red-500/20 text-red-400',
-  },
-  {
-    slug: 'zero-trust-key-substitution',
-    title: 'Zero-Trust Key Substitution: How Tigclaw Protects Your $10,000 API Budget',
-    excerpt: 'A deep-dive into AES-256-GCM encrypted vaults, machine-bound key derivation, and in-memory-only real key substitution.',
-    date: '2026-03-14',
-    readTime: '12 min',
-    tag: 'Architecture',
-    tagColor: 'bg-blue-500/20 text-blue-400',
-  },
-  {
-    slug: 'prompt-injection-defense',
-    title: 'Blocking DAN Attacks with a 50MB Local AI Model — No Cloud Required',
-    excerpt: 'How Tigclaw\'s SLM Firewall detects and neutralizes prompt injection, jailbreak, and social engineering attacks in under 50ms.',
-    date: '2026-03-12',
-    readTime: '10 min',
-    tag: 'AI Security',
-    tagColor: 'bg-purple-500/20 text-purple-400',
-  },
-  {
-    slug: 'anti-dow-rate-limiting',
-    title: 'Anti-DoW: Stop Botnets From Draining Your OpenAI Credits Overnight',
-    excerpt: 'Token bucket rate limiting at the TCP level — how Tigclaw saves your credit card from Denial-of-Wallet attacks.',
-    date: '2026-03-10',
-    readTime: '6 min',
-    tag: 'Defense',
-    tagColor: 'bg-orange-500/20 text-orange-400',
-  },
-]
+import { blogPosts } from '../data/blogData'
 
 export default function BlogPage() {
   return (
@@ -58,7 +20,7 @@ export default function BlogPage() {
         </div>
 
         <div className="space-y-6">
-          {posts.map((post) => (
+          {blogPosts.map((post) => (
             <Link
               key={post.slug}
               to={`/blog/${post.slug}`}

@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import SEO from './components/SEO'
 import BlogPage from './pages/Blog'
+import BlogDetail from './pages/BlogDetail'
 import DocsPage from './pages/Docs'
 
 import ChangelogPage from './pages/Changelog'
@@ -150,6 +151,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<BlogDetail />} />
         <Route path="/docs" element={<DocsPage />} />
 
         <Route path="/changelog" element={<ChangelogPage />} />

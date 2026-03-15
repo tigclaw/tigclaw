@@ -2,9 +2,11 @@
 docs/
 other/
 
-# Dependencies
+# Dependencies & Env
 node_modules/
 .docsify_cache/
+.env
+.env.*
 
 # Build artifacts
 tigclaw.exe

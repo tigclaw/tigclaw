@@ -17,7 +17,26 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <nav className="sticky top-0 z-50 border-b border-zinc-800/50 bg-zinc-950/80 backdrop-blur-xl">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
-            <span className="text-2xl group-hover:scale-110 transition-transform">🐯</span>
+            <svg className="w-7 h-7 group-hover:scale-110 transition-transform" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="hclaw1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#FF8C00"/>
+                  <stop offset="100%" stopColor="#F97316"/>
+                </linearGradient>
+                <linearGradient id="hclaw2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#F97316"/>
+                  <stop offset="100%" stopColor="#EA580C"/>
+                </linearGradient>
+                <linearGradient id="hclaw3" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#EA580C"/>
+                  <stop offset="100%" stopColor="#C2410C"/>
+                </linearGradient>
+              </defs>
+              <path d="M8 4 L22 44" stroke="url(#hclaw1)" strokeWidth="5" strokeLinecap="round"/>
+              <path d="M20 4 L34 44" stroke="url(#hclaw2)" strokeWidth="5" strokeLinecap="round"/>
+              <path d="M32 4 L46 44" stroke="url(#hclaw3)" strokeWidth="5" strokeLinecap="round"/>
+              <path d="M6 6 L44 6" stroke="url(#hclaw1)" strokeWidth="3.5" strokeLinecap="round" opacity="0.6"/>
+            </svg>
             <span className="text-xl font-bold text-white tracking-tight">Tigclaw</span>
           </Link>
 
@@ -127,7 +146,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
           <div className="border-t border-zinc-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <span>🐯</span>
+              <svg className="w-5 h-5" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 4 L22 44" stroke="#F97316" strokeWidth="5" strokeLinecap="round"/>
+                <path d="M20 4 L34 44" stroke="#EA580C" strokeWidth="5" strokeLinecap="round"/>
+                <path d="M32 4 L46 44" stroke="#C2410C" strokeWidth="5" strokeLinecap="round"/>
+                <path d="M6 6 L44 6" stroke="#F97316" strokeWidth="3.5" strokeLinecap="round" opacity="0.6"/>
+              </svg>
               <span className="text-sm text-zinc-500">Tigclaw — Zero-Trust AI Security Gateway</span>
             </div>
             <p className="text-xs text-zinc-600">100% Open Source · 100% Local · Zero Cloud</p>
